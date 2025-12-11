@@ -1,15 +1,6 @@
 {
-  "name": "Dev Workspace",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-  "features": {
-    "ghcr.io/devcontainers/features/node:1": {
-      "version": "lts"
-    },
-    "ghcr.io/devcontainers/features/python:1": {
-      "version": "3.11"
-    },
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
-  },
+  "name": "Django App",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -23,5 +14,6 @@
       ]
     }
   },
+  "postCreateCommand": "pip install --upgrade pip setuptools wheel",
   "remoteUser": "vscode"
 }
