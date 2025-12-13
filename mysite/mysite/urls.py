@@ -23,6 +23,7 @@ urlpatterns = [
     path("", views.home_page, name="home"),
     path("admin/", admin.site.urls, name="secret"),
     path("about/", views.aboutUs, name="about"),
+    path("form/", views.form, name="form"),
     path("course/", views.course),
     path("services/", views.services),
     path("course/<int:courseid>", views.course_details),
