@@ -7,12 +7,19 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
+        <style>
+            .active {
+                color: red;
+                font-weight: bold;
+            }
+        </style>
     </head>
     <body>
         {% include "message.html" %}
 
-        <a href="/services">Go to services</a>
-        <a href="{% url 'home' %}">Go to home</a>
+        {% url 'home' as home %}
+        <a class="{% if request.path == home %}active{% endif %}" href="{{home}}">Go to home</a>
+        <a class="{% if request.path == '/services/' %}active{% endif %}" href="/services">Go to services</a>
 
         {% block content_x %}{% endblock content_x %}
         
