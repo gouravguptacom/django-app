@@ -20,10 +20,11 @@ from django.urls import path
 from mysite import views
 
 urlpatterns = [
-    path("", views.home_page),
-    path("admin/", admin.site.urls),
-    path("about/", views.aboutUs),
+    path("", views.home_page, name="home"),
+    path("admin/", admin.site.urls, name="secret"),
+    path("about/", views.aboutUs, name="about"),
     path("course/", views.course),
+    path("services/", views.services),
     path("course/<int:courseid>", views.course_details),
     # path("course/<slug:coursename>", views.course_details),
 ]

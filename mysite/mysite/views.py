@@ -20,5 +20,8 @@ def aboutUs(request):
 def course(request):
     return HttpResponse("Welcome to mysite")
 
+def services(request):
+    return render(request, "services.html")
+
 def course_details(request, courseid: int):
     return HttpResponse(f"entered id: {courseid}")

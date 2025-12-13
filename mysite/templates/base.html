@@ -11,6 +11,9 @@
     <body>
         {% include "message.html" %}
 
+        <a href="/services">Go to services</a>
+        <a href="{% url 'home' %}">Go to home</a>
+
         {% block content_x %}{% endblock content_x %}
         
         <script src="" async defer></script>
