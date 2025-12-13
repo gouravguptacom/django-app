@@ -17,6 +17,22 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         Welcome to Razorfish | New York
+        {% for n in clist %}
+            <div>{{forloop.last}} {{n}}</div>
+        {% endfor %}
+        <table border="1" cellpadding="10">
+            <tr>
+                <th>Name</th>
+                <th>Phone</th>
+            </tr>
+            {% for d in student_details %}
+            <tr>
+                    <td>{{d.name}}</td>
+                    <td>{{d.phone}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
         <script src="" async defer></script>
     </body>
 </html>
