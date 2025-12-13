@@ -4,6 +4,7 @@
   "customizations": {
     "vscode": {
       "extensions": [
+        "sidthesloth.html5-boilerplate",
         "ms-python.python",
         "ms-python.vscode-pylance",
         "esbenp.prettier-vscode",
