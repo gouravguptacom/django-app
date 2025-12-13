@@ -6,6 +6,7 @@ def home_page(request):
         "title": "Home Page",
         "bdata": "Welcome to razorfish",
         "clist": ["PHP", "Java", "Django"],
+        "numbers": [10, 20, 30, 40, 50],
         "student_details": [
             {"name": "gaurav gupta", "phone": 983248723},
             {"name": "testing kumar", "phone": 23612323}
