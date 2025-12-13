@@ -1,5 +1,5 @@
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, redirect
 
 def home_page(request):
     data = {
@@ -21,7 +21,9 @@ def course(request):
     return HttpResponse("Welcome to mysite")
 
 def services(request):
-    return render(request, "services.html")
+    if request.method == "GET":
+        output = request.GET.get("output")
+    return render(request, "services.html", { "output": output })
 
 def form(request):
     finalans = 0
@@ -38,6 +40,10 @@ def form(request):
                 "n2": n2,
                 "output": finalans
             }
+            
+            url = "/services/?output={}".format(finalans)
+            return HttpResponseRedirect(url)
+            # return redirect(url)
     except:
         pass
     return render(request, "form.html", data)
