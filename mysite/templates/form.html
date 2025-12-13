@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 {% block content_x %}
     <h1>User Form</h1>
-    <form>
+    <form method="post">
+        {% csrf_token %}
         <div>
             <label for="">Value1</label>
-            <input type="number" name="num1" />
+            <input type="number" name="num1" value="{{n1}}" />
         </div>
         <div>
             <label for="">Value2</label>
-            <input type="number" name="num2" />
+            <input type="number" name="num2" value={{n2}} />
         </div>
         <div>
             <button type="submit">Save</button>

@@ -25,15 +25,22 @@ def services(request):
 
 def form(request):
     finalans = 0
+    data = {}
     try:
+        if request.method == "POST":
         # n1 = int(request.GET["num1"])
         # n2 = int(request.GET["num2"])
-        n1 = request.GET.get("num1")
-        n2 = request.GET.get("num2")
-        finalans = (n1 + n2)
+            n1 = int(request.POST.get("num1"))
+            n2 = int(request.POST.get("num2"))
+            finalans = (n1 + n2)
+            data = {
+                "n1": n1,
+                "n2": n2,
+                "output": finalans
+            }
     except:
         pass
-    return render(request, "form.html", { "output": finalans })
+    return render(request, "form.html", data)
 
 def course_details(request, courseid: int):
     return HttpResponse(f"entered id: {courseid}")
