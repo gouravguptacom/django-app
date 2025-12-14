@@ -31,6 +31,11 @@
 ```
 > run these next to `static` & `template` folder
 > python manage.py startapp service
+```
+
+Run these after changing the `service/models.py` & `mysite/settings.py`
+
+```
 > python manage.py makemigrations
 > python manage.py migrate
 ```
