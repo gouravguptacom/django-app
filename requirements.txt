@@ -1,1 +1,2 @@
 django
+django-tinymce==3.3.0

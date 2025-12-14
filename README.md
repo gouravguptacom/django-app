@@ -39,3 +39,14 @@ Run these after changing the `service/models.py` & `mysite/settings.py`
 > python manage.py makemigrations
 > python manage.py migrate
 ```
+
+```
+> python manage.py startapp news
+```
+
+Run these after changing the `news/models.py` & `mysite/settings.py`
+
+```
+> python manage.py makemigrations
+> python manage.py migrate
+```
