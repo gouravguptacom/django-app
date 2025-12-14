@@ -4,8 +4,10 @@ from .forms import usersForm
 from service.models import Service
 
 def home_page(request):
+    # DONT USE NEGETIVE INDEX IN RANGE EX. [:-1]
+    service_data = Service.objects.all().order_by("service_title")[:1] # asc
     # service_data = Service.objects.all().order_by("service_title") # asc
-    service_data = Service.objects.all().order_by("-service_title") # desc
+    # service_data = Service.objects.all().order_by("-service_title") # desc
     # print(list(map(lambda x: x.service_icon, service_data)))
 
     data = {
