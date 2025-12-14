@@ -26,6 +26,7 @@ urlpatterns = [
     path("form/", views.form, name="form"),
     path("course/", views.course),
     path("services/", views.services),
+    path("calculator/", views.calculator),
     path("submit-form/", views.submit_form, name="submit-form"),
     path("course/<int:courseid>", views.course_details),
     # path("course/<slug:coursename>", views.course_details),
