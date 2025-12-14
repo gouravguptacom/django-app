@@ -1,10 +1,15 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .forms import usersForm
+from service.models import Service
 
 def home_page(request):
+    service_data = Service.objects.all()
+    # print(list(map(lambda x: x.service_icon, service_data)))
+
     data = {
         "title": "Home Page",
+        "service_data": service_data,
         "bdata": "Welcome to razorfish",
         "clist": ["PHP", "Java", "Django"],
         "numbers": [10, 20, 30, 40, 50],

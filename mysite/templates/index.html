@@ -31,5 +31,11 @@
             <strong>No Data Found</strong>
         {% endif %}
 
+        <ul>
+            {% for i in service_data %}
+                <li>{{i.service_title}}</li>
+            {% endfor %}
+        </ul>
+
         <img src="/static/logo.png" />
 {% endblock content_x %}
