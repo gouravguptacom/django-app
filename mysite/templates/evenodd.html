@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% block content_x %}
     <form method="POST">
+        {% if error %}
+        <div role="alert">
+            &gt;Please enter the value
+        </div>
+        {% endif %}
+
         {% csrf_token %}
         <div>
             <label>Value 1</label>

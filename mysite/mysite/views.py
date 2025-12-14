@@ -54,6 +54,9 @@ def marksheet(request):
 def evenodd(request):
     c = ""
     if request.method == "POST":
+        if request.POST.get("num1") == "":
+            return render(request, "evenodd.html", {"error":True})
+
         n1 = eval(request.POST.get("num1"))
         if n1 % 2 == 0:
             c = "Even"
