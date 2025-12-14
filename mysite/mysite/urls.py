@@ -27,6 +27,7 @@ urlpatterns = [
     path("course/", views.course),
     path("evenodd/", views.evenodd),
     path("services/", views.services),
+    path("marksheet/", views.marksheet),
     path("calculator/", views.calculator),
     path("submit-form/", views.submit_form, name="submit-form"),
     path("course/<int:courseid>", views.course_details),

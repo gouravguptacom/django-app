@@ -26,6 +26,31 @@ def services(request):
         output = request.GET.get("output")
     return render(request, "services.html", { "output": output })
 
+def marksheet(request):
+    if request.method == "POST":
+        sub1 = eval(request.POST.get("sub1"))
+        sub2 = eval(request.POST.get("sub2"))
+        sub3 = eval(request.POST.get("sub3"))
+        sub4 = eval(request.POST.get("sub4"))
+        sub5 = eval(request.POST.get("sub5"))
+        t = sum([sub1, sub2, sub3, sub4, sub5])
+        p = t * 100 / 500;
+        if p >= 60:
+            d = "First Div"
+        elif p >= 48:
+            d = "Second Div"
+        elif p >= 35:
+            d = "Third Div"
+        else:
+            d = "Fail"
+        data = {
+            "total": t,
+            "per": p,
+            "div": d
+        }
+        return render(request, "marksheet.html", data)
+    return render(request, "marksheet.html")
+
 def evenodd(request):
     c = ""
     if request.method == "POST":
