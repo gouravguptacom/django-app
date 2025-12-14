@@ -54,3 +54,8 @@ Run these after changing the `news/models.py` & `mysite/settings.py`
 ```
 > python manage.py changepassword <username>
 ```
+
+```
+> python manage.py makemigrations
+> python manage.py migrate
+```

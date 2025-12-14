@@ -30,7 +30,7 @@ urlpatterns = [
     path("marksheet/", views.marksheet),
     path("calculator/", views.calculator),
     path("submit-form/", views.submit_form, name="submit-form"),
-    path("news_details/<id>", views.news_details),
+    path("news_details/<slug>", views.news_details),
     path("course/<int:courseid>", views.course_details),
     # path("course/<slug:coursename>", views.course_details),
 ]

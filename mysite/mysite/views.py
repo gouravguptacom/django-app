@@ -101,8 +101,8 @@ def calculator(request):
 
     return render(request, "calculator.html", {"c":c})
 
-def news_details(request, id):
-    news_detail = News.objects.get(id=id)
+def news_details(request, slug):
+    news_detail = News.objects.get(news_slug=slug)
     data = {
         "news_detail": news_detail
     }

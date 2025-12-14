@@ -1,2 +1,3 @@
 django
 django-tinymce==3.3.0
+django-autoslug==1.9.8
