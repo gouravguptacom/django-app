@@ -27,3 +27,10 @@
 > python manage.py createsuperuser
 > visit 👉 http://127.0.0.1:4444/admin
 ```
+
+```
+> run these next to `static` & `template` folder
+> python manage.py startapp service
+> python manage.py makemigrations
+> python manage.py migrate
+```
