@@ -33,7 +33,7 @@
 
         <ul>
             {% for i in service_data %}
-                <li>{{i.service_title}}</li>
+                <li>{{i.service_title | safe}}</li>
             {% endfor %}
         </ul>
 
