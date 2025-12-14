@@ -50,8 +50,11 @@ def pagination(request):
     paginator = Paginator(ServiceData, 2)
     page_number = request.GET.get('page')
     service_data_final = paginator.get_page(page_number)
+    total_page = service_data_final.paginator.num_pages
     data = {
-        "service_data": service_data_final 
+        "last_page": total_page,
+        "service_data": service_data_final ,
+        "total_page_list": [n+1 for n in range(total_page)]
     }
     return render(request, "pagination.html", data)
 
