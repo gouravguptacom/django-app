@@ -6,6 +6,10 @@ from news.models import News
 
 def home_page(request):
     news_data = News.objects.all()
+    
+    # sd = News.objects.filter(news_title="title") # exact match
+    # sd = News.objects.filter(news_title__icontains="t") # like match of sql
+
     # DONT USE NEGETIVE INDEX IN RANGE EX. [:-1]
     service_data = Service.objects.all().order_by("service_title")[:1] # asc
     # service_data = Service.objects.all().order_by("service_title") # asc
@@ -15,7 +19,7 @@ def home_page(request):
     data = {
         "title": "Home Page",
         "news_data": news_data,
-        "service_data": service_data,
+        "service_data": [],
         "bdata": "Welcome to razorfish",
         "clist": ["PHP", "Java", "Django"],
         "numbers": [10, 20, 30, 40, 50],

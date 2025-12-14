@@ -34,6 +34,11 @@
         <ul>
             {% for i in service_data %}
                 <li>{{i.service_title | safe}}</li>
+
+            {% empty %}  {% comment %} 👈 similar like else {% endcomment %}
+
+                No Service Found
+
             {% endfor %}
         </ul>
 
