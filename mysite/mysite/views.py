@@ -25,6 +25,24 @@ def services(request):
         output = request.GET.get("output")
     return render(request, "services.html", { "output": output })
 
+def submit_form(request):
+    finalans = 0
+    data = {}
+    try:
+        if request.method == "POST":
+            n1 = int(request.POST.get("num1"))
+            n2 = int(request.POST.get("num2"))
+            finalans = (n1 + n2)
+            data = {
+                "n1": n1,
+                "n2": n2,
+                "output": finalans
+            }
+            
+            return HttpResponse(finalans)
+    except:
+        pass
+
 def form(request):
     finalans = 0
     data = {}
