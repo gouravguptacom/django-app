@@ -1,5 +1,6 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
+from django.core.paginator import Paginator
 from .forms import usersForm
 from service.models import Service
 from news.models import News
@@ -35,6 +36,24 @@ def aboutUs(request):
 
 def course(request):
     return HttpResponse("Welcome to mysite")
+
+def pagination(request):
+    # On HTML Side:
+    # {% if service_data.has_previous %}
+    #   /pagination/?page={{service_data.previous_page_number}}
+    # {% endif %}
+    # {% if service_data.has_next %}
+    #   /pagination/?page={{service_data.next_page_number}}
+    # {% endif %}
+    
+    ServiceData = Service.objects.all()
+    paginator = Paginator(ServiceData, 2)
+    page_number = request.GET.get('page')
+    service_data_final = paginator.get_page(page_number)
+    data = {
+        "service_data": service_data_final 
+    }
+    return render(request, "pagination.html", data)
 
 def services(request):
     if request.method == "GET":
