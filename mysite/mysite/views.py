@@ -2,8 +2,10 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .forms import usersForm
 from service.models import Service
+from news.models import News
 
 def home_page(request):
+    news_data = News.objects.all()
     # DONT USE NEGETIVE INDEX IN RANGE EX. [:-1]
     service_data = Service.objects.all().order_by("service_title")[:1] # asc
     # service_data = Service.objects.all().order_by("service_title") # asc
@@ -12,6 +14,7 @@ def home_page(request):
 
     data = {
         "title": "Home Page",
+        "news_data": news_data,
         "service_data": service_data,
         "bdata": "Welcome to razorfish",
         "clist": ["PHP", "Java", "Django"],

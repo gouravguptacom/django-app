@@ -37,5 +37,11 @@
             {% endfor %}
         </ul>
 
+        <marquee>
+            {% for news in news_data %}
+               <a href="{{news.title}}"> {{news.news_desc|safe}}</a>
+            {% endfor %}
+        </marquee>
+
         <img src="/static/logo.png" />
 {% endblock content_x %}
