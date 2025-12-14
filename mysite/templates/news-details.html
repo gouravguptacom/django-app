@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block content_x %}
+    <h1>{{news_detail.news_title}}</h1>
+    <p>{{news_detail.news_desc|safe}}</p>
+{% endblock content_x %}

@@ -97,6 +97,13 @@ def calculator(request):
 
     return render(request, "calculator.html", {"c":c})
 
+def news_details(request, id):
+    news_detail = News.objects.get(id=id)
+    data = {
+        "news_detail": news_detail
+    }
+    return render(request, "news-details.html", data)
+
 def submit_form(request):
     finalans = 0
     data = {}

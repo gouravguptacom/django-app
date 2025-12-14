@@ -37,9 +37,9 @@
             {% endfor %}
         </ul>
 
-        <marquee>
+        <marquee onmouseover="stop()" onmouseout="start()">
             {% for news in news_data %}
-               <a href="{{news.title}}"> {{news.news_desc|safe}}</a>
+               <a href="/news_details/{{news.id}}"> {{news.news_desc|safe}}</a>
             {% endfor %}
         </marquee>
 
