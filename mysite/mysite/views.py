@@ -1,5 +1,6 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
+from .forms import usersForm
 
 def home_page(request):
     data = {
@@ -44,8 +45,9 @@ def submit_form(request):
         pass
 
 def form(request):
+    fn = usersForm()
     finalans = 0
-    data = {}
+    data = {"form":fn}
     try:
         if request.method == "POST":
         # n1 = int(request.GET["num1"])
@@ -56,6 +58,7 @@ def form(request):
             data = {
                 "n1": n1,
                 "n2": n2,
+                "form": fn,
                 "output": finalans
             }
             

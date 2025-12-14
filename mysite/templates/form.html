@@ -3,14 +3,7 @@
     <h1>User Form</h1>
     <form method="post" action="{% url 'submit-form' %}">
         {% csrf_token %}
-        <div>
-            <label for="">Value1</label>
-            <input type="number" name="num1" value="{{n1}}" />
-        </div>
-        <div>
-            <label for="">Value2</label>
-            <input type="number" name="num2" value={{n2}} />
-        </div>
+        {{form}}
         <div>
             <button type="submit">Save</button>
         </div>
