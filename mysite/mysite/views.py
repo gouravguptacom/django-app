@@ -26,6 +26,17 @@ def services(request):
         output = request.GET.get("output")
     return render(request, "services.html", { "output": output })
 
+def evenodd(request):
+    c = ""
+    if request.method == "POST":
+        n1 = eval(request.POST.get("num1"))
+        if n1 % 2 == 0:
+            c = "Even"
+        else:
+            c = "Odd"
+
+    return render(request, "evenodd.html", {"c":c})
+
 def calculator(request):
     c = ""
     try:
