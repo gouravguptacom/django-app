@@ -4,7 +4,8 @@ from .forms import usersForm
 from service.models import Service
 
 def home_page(request):
-    service_data = Service.objects.all()
+    # service_data = Service.objects.all().order_by("service_title") # asc
+    service_data = Service.objects.all().order_by("-service_title") # desc
     # print(list(map(lambda x: x.service_icon, service_data)))
 
     data = {
